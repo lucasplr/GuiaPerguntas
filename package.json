@@ -1,0 +1,27 @@
+{
+  "name": "guiaperguntas",
+  "version": "1.0.0",
+  "description": "Uma plataforma de perguntas e respostas ao estilo Yahoo respostas",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucasplr/GuiaPerguntas.git"
+  },
+  "author": "Lucas Riffel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucasplr/GuiaPerguntas/issues"
+  },
+  "homepage": "https://github.com/lucasplr/GuiaPerguntas#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19"
+  }
+}
