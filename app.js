@@ -56,13 +56,32 @@ app.get('/pergunta/:id', (req,res) => {
         where: {id: busca}
     }).then(pergunta => {
         if(pergunta != undefined) { //finded
-            res.render('pergunta', {
-                pergunta: pergunta
+            
+            Resposta.findAll({
+                where: {perguntaId: pergunta.id},
+                order: [['id', 'DESC']]
+            }).then(respostas => {
+                res.render('pergunta', {
+                    pergunta: pergunta,
+                    respostas: respostas
+                })
             })
-        }else{ //not finded
+            }else{ //not finded
             res.redirect('/')
         }
         })
+})
+
+app.post('/responder', (req,res) => {
+    var corpo = req.body.corpo
+    var perguntaId = req.body.pergunta
+
+    Resposta.create({
+        corpo: corpo,
+        perguntaId: perguntaId
+    }).then(() => {
+        res.redirect(`/pergunta/${perguntaId}`)
+    })
 })
 
 app.listen(8080, () => {
