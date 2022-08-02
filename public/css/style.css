@@ -5,3 +5,14 @@ body{
 #formulario-pergunta{
     margin-top: 5vh;
 }
+#perg{
+    margin-top: 10px;
+    margin-left: 20px;
+}
+#titulo{
+    margin: 5px;
+}
+#descricao{
+    margin: 5px;
+    background-color: #eceff1;
+}
